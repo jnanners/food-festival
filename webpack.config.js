@@ -5,6 +5,13 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
 const config = {
+devServer: {
+    static: {
+        directory: path.join(__dirname, './'),
+    },
+    compress: true,
+    port: 8080,
+    },
   entry: {
     app: './assets/js/script.js',
     events: './assets/js/events.js',
@@ -65,7 +72,7 @@ const config = {
       ]
     })
   ],
-  mode: 'development'
+  mode: 'development',
 };
 
 module.exports = config;
